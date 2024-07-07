@@ -21,16 +21,19 @@ namespace Payrolls.Tests
         public void CalculateBasicSalary_ForEmployeeWageAndWorkingDays_ReturnsBasicSalary()
         {
             // Arrange
+
             var employee = new Employee
             {
                 Wage = 500m,
                 WorkingDays = 20
             };
 
+            var salarySlipProcessor = new SalarySlipProcessor();
 
             // Act
             var salarySlipProcessor = new SalarySlipProcessor();
             var acutal = salarySlipProcessor.CalculateBasicSalary(employee);
+
             var expected = 10000m;
 
             // Assert
